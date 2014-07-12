@@ -1,0 +1,15 @@
+{
+  "name": "join",
+  "version": "0.0.0",
+  "description": "job interview",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "erick",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.5.1",
+    "express-dust": "^0.1.5"
+  }
+}
