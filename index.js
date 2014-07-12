@@ -1,2 +1,7 @@
 var express = require('express');
-var dust =  require('dust');
+var dustjs =  require('adaro');
+
+var app = express();
+
+app.engine('dust', dustjs.dust());
+app.set('view engine', 'dust');

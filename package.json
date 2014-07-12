@@ -9,7 +9,9 @@
   "author": "erick",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.5.1",
-    "express-dust": "^0.1.5"
+    "adaro": "^0.1.5",
+    "dustjs-helpers": "^1.2.0",
+    "dustjs-linkedin": "^2.4.0",
+    "express": "^4.5.1"
   }
 }
