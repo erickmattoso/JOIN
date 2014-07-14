@@ -1,2 +1,26 @@
-{#users}
-{/users}
+<h1>{pageName} users</h1>
+<table class="table-list">
+	<tr>
+		<th style="width:100px;">Full name</th>
+		<th style="width:60px;">Birthdate</th>
+		<th style="width:80px;">CPF</th>
+		<th style="width:100px;">City</th>
+		<th style="width:100px;">Phone</th>
+		<th style="width:100px;">Email</th>
+		<th>Comment</th>
+		<th style="width:190px;">Action</th>
+	</tr>
+	{#users}
+	<tr class="{#isSelected}selected{:else}normal{/isSelected}-user">
+		<td>{name} {lastname}</td>
+		<td>{birthdate}</td>
+		<td>{cpf}</td>
+		<td>{city}</td>
+		<td>{phoneCod} {phone}</td>
+		<td>{email}</td>
+		<td>{comment}</td>
+		<td><a href="javascript:;" class="button js-select" data-selected="{#isSelected}1{:else}0{/isSelected}" data-id="{id}">{#isSelected}Unselect{:else}Select{/isSelected}</a></td>
+	</tr>
+	{/users}
+</table>
+<script src="/js/selection.js"></script>

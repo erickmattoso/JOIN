@@ -1,4 +1,3 @@
-//front-end view
 $('#register-form').submit(function(event){
 	event.preventDefault();
 	$('.warning').remove();

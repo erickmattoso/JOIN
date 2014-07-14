@@ -1,4 +1,3 @@
-//back-end view
 var express = require('express');
 var dustjs =  require('adaro');
 var path = require('path');
@@ -51,7 +50,6 @@ app.engine('dust', dustjs.dust({
 app.set('view engine', 'dust');
 app.set('views', path.join(__dirname, 'views'));
 
-// app.use
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({
 	extended: true
@@ -66,7 +64,6 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// app.get
 app.get('/', function(req, res){
 	res.render('index', {
 		title: 'Home',
@@ -158,16 +155,58 @@ app.get('/logout', function(req, res){
 	res.redirect('/');
 });
 app.get('/registered-users', function(req, res){
+	if(!req.user){
+		return res.redirect('/login');
+	}
 	db.User.findAll().success(function(users) {
 		res.render('usersList', {
 			title: 'User list',
+			pageName: 'Registered',
 			user: req.user,
-			users: users
+			users: users.map(function(instance){
+				return instance.values;
+			})
 		});
-		console.log(users.map(function(instance){
-			return instance.values;
-		}));
+	});
+});
+app.get('/selected-users', function(req, res){
+	if(!req.user){
+		return res.redirect('/login');
+	}
+	db.User.findAll({
+		where: {
+			isSelected: true
+		}
+	}).success(function(users) {
+		res.render('usersList', {
+			title: 'User list',
+			pageName: 'Selected',
+			user: req.user,
+			users: users.map(function(instance){
+				return instance.values;
+			})
+		});
+	});
+});
+app.post('/select-toggle/:selected/:id', function(req, res){
+	if(!req.user){
+		return res.send('Authentication Error: Please login again.');
+	}
+	console.log(typeof req.params.selected);
+	db.User.find({
+		where: {
+			id: req.params.id
+		}
+	}).success(function(user){
+		user.isSelected = +req.params.selected === 1;
+		user.save().success(function(){
+			res.send('');
+		});
 	});
 });
 
-app.listen(1337); // http://localhost:1337/
+
+
+
+
+app.listen(1337);

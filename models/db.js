@@ -13,7 +13,11 @@ var User = sequelize.define('User', {
 	phoneCod: Sequelize.STRING,
 	phone: Sequelize.STRING,
 	email: Sequelize.STRING,
-	comment: Sequelize.STRING
+	comment: Sequelize.STRING,
+	isSelected: {
+		type: Sequelize.BOOLEAN,
+		defaultValue: false
+	}
 });
 var Admin = sequelize.define('Admin', {
 	username: Sequelize.STRING,
