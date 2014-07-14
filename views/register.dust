@@ -1,0 +1,50 @@
+<!-- register form file -->
+<div class="general">
+	<h1>Test form</h1>
+	<form id="register-form">
+		<fieldset>
+			<label class="label-block" for="name">Name:</label>
+			<input class="input-text" id="name" name="name" type="text" value="" placeholder="Name" required />
+			<br /><br />
+
+			<label class="label-block" for="lastname">Last name:</label>
+			<input class="input-text" id="lastname" name="lastname" type="text" value="" placeholder="Last Name"required />
+			<br /><br />
+
+			<label class="label-block" for="birthdate">Date of birth:</label>
+			<input class="input-text" id="birthdate" name="birthdate" type="text" value="" placeholder="dd/mm/yyyy" required />
+			<br /><br />
+
+			<label class="label-block" for="cpf">CPF:</label>
+			<input class="input-text" id="cpf" name="cpf" type="text" value="" placeholder="xxx.xxx.xxx-xx" required />
+			<br /><br />
+
+			<label class="label-block" for="city">City:</label>
+			<input class="input-text" id="city" name="city" type="text" value="" placeholder="City" required />
+			<br /><br />
+
+			<label class="label-block" for="phone">Phone:</label>
+			<input class="input-text" id="phoneCod" name="phoneCod" type="text" value="" required />
+			<input class="input-text" id="phone" name="phone" type="text" value="" required />
+			<br /><br />
+
+			<label class="label-block" for="email">Email:</label>
+			<input class="input-text" id="email" name="email" type="email" value="" placeholder="name@email.com" required />
+			<br /><br />
+
+			<span class="break"><!-- --></span>
+
+			<label class="label-block" for="comment">Comment</label>
+			<textarea id="comment" name="comment"></textarea>
+			<br /><br />
+
+			<input id="agree" name="agree" type="checkbox" title="You have to agree if you want to proceed" required />
+			<label for="agree">I agree.</label>
+			<br /><br />
+		</fieldset>
+		<input type="submit" value="Send" required />
+		<input type="reset" value="Clean" required />
+	</form>
+</div>
+
+<script src="/js/register.js"></script>

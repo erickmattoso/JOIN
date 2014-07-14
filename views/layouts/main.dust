@@ -1,0 +1,17 @@
+<!-- skeleton -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>{title} - Join</title>
+	<link rel="stylesheet" href="/css/screen.css">
+	<script src="/lib/jquery-2.1.1.min.js"></script>
+</head>
+<body>
+	<header>
+		logo
+	</header>
+
+	{>"{_main}"/}
+</body>
+</html>
