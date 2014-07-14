@@ -3,7 +3,7 @@
 	<div class="warning">{message}</div>
 	<fieldset>
 		<label class="label-block" for="username">Username:</label>
-		<input class="input-text" id="username" name="username" type="text" value="" />
+		<input class="input-text" id="username" name="username" type="text" value="" autofocus />
 		<br /><br />
 
 		<label class="label-block" for="password">Password:</label>

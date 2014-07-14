@@ -26,7 +26,7 @@ passport.deserializeUser(function(id, done) {
 passport.use(new LocalStrategy(function(username, password, done) {
 	db.Admin.find({
 		where: { username: username }
-	}).complete( function(err, user) {
+	}).complete(function(err, user) {
 		if (err) {
 			return done(err);
 		}
@@ -205,8 +205,4 @@ app.post('/select-toggle/:selected/:id', function(req, res){
 	});
 });
 
-
-
-
-
-app.listen(1337);
+app.listen(process.env.PORT || 1337);
