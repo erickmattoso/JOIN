@@ -11,7 +11,21 @@
 	<header>
 		logo
 	</header>
+	<nav>
+		<a href="/signup">Sign up</a>
 
-	{>"{_main}"/}
+		{#user}
+			<a href="/logout">Log out</a>
+			<a href="/registered-users">Registered users</a>
+			<a href="/selected-users">Selected users</a>
+		{:else}
+			<a href="/login">Login</a>
+		{/user}
+	</nav>
+	<div class="wrapper">
+		{>"{_main}"/}
+	</div>
+
+
 </body>
 </html>

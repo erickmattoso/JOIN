@@ -8,7 +8,26 @@ ul li, ol li { list-style:none; }
 /* general */
 * {font-family:Arial; font-size:11px;}
 h1 {font-size:20px; padding:0; margin:0 0 10px 0;}
-.general {width:1060px; background:#E5E5E5; padding:20px; margin:0 auto;}
+/*.general {width:1060px; background:#E5E5E5; padding:20px; margin:0 auto;}*/
+.wrapper, nav {
+	margin:0 auto;
+	width:1060px;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+nav>a{
+	background: black;
+	color: white;
+	padding: 10px;
+	display: inline-block;
+	margin-right: 5px;
+	font-size: 14px;
+}
+
+.wrapper{
+	background:#E5E5E5;
+	padding:20px;
+}
 .break {clear:both; display:block;}
 
 /* form */
@@ -44,6 +63,7 @@ th, td {text-align:left; vertical-align:top; padding:5px;}
 	color: red;
 	margin-left: 10px;
 }
+
 
 
 
