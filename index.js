@@ -79,7 +79,6 @@ app.get('/signup', function(req, res){
 		title: 'Sign up',
 		user: req.user
 	});
-
 });
 
 app.post('/signup', function(req, res){
@@ -93,14 +92,14 @@ app.post('/signup', function(req, res){
 	}
 
 	var fieldNames = [
-	'name',
-	'lastname',
-	'birthdate',
-	'cpf',
-	'city',
-	'phoneCod',
-	'phone',
-	'email'
+		'name',
+		'lastname',
+		'birthdate',
+		'cpf',
+		'city',
+		'phoneCod',
+		'phone',
+		'email'
 	];
 
 	var emptyField = fieldNames.some(function(field){
@@ -155,7 +154,7 @@ app.post('/login',
 		failureFlash: true
 	}));
 app.get('/logout', function(req, res){
-  req.logout();
-  res.redirect('/');
+	req.logout();
+	res.redirect('/');
 });
 app.listen(1337); // http://localhost:1337/

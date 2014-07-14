@@ -11,9 +11,12 @@
 	<header>
 		logo
 	</header>
-	<nav>
-		<a href="/signup">Sign up</a>
 
+	<nav>
+		{#user}
+			<span class="welcome">Welcome <b>{dataValues.username}</b>.</span>
+		{/user}
+		<a href="/signup">Sign up</a>
 		{#user}
 			<a href="/logout">Log out</a>
 			<a href="/registered-users">Registered users</a>
@@ -21,7 +24,9 @@
 		{:else}
 			<a href="/login">Login</a>
 		{/user}
+
 	</nav>
+
 	<div class="wrapper">
 		{>"{_main}"/}
 	</div>

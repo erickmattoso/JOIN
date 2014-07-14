@@ -6,7 +6,7 @@ ul li, ol li { list-style:none; }
 
 
 /* general */
-* {font-family:Arial; font-size:11px;}
+/** {font-family:Arial; font-size:11px;}*/
 h1 {font-size:20px; padding:0; margin:0 0 10px 0;}
 /*.general {width:1060px; background:#E5E5E5; padding:20px; margin:0 auto;}*/
 .wrapper, nav {
@@ -64,6 +64,12 @@ th, td {text-align:left; vertical-align:top; padding:5px;}
 	margin-left: 10px;
 }
 
-
+.welcome{
+	float: right;
+	font-size: 14px;
+}
+body{
+	font-family: Arial;
+}
 
 
