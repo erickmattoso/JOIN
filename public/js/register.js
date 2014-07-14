@@ -12,6 +12,7 @@ $('#register-form').submit(function(event){
 			return;
 		}
 		alert(data.message);
+		location.href = '/';
 
 	}, 'json');
 });

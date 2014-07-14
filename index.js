@@ -19,8 +19,8 @@ passport.serializeUser(function(user, done) {
 passport.deserializeUser(function(id, done) {
 	db.Admin.find({
 		where: { id: id }
-	}).complete( function(err, user) {
-		done(null, user);
+	}).complete(function(err, user) {
+		done(null, user.values);
 	});
 });
 
@@ -57,7 +57,7 @@ app.use(bodyParser.urlencoded({
 	extended: true
 }));
 app.use(session({
-	secret: 'jasuiahs-+)-9897875745453',
+	secret: 'jasuiah9897875745453',
 	resave: true,
 	saveUninitialized: true
 }));
@@ -157,4 +157,17 @@ app.get('/logout', function(req, res){
 	req.logout();
 	res.redirect('/');
 });
+app.get('/registered-users', function(req, res){
+	db.User.findAll().success(function(users) {
+		res.render('usersList', {
+			title: 'User list',
+			user: req.user,
+			users: users
+		});
+		console.log(users.map(function(instance){
+			return instance.values;
+		}));
+	});
+});
+
 app.listen(1337); // http://localhost:1337/

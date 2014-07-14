@@ -13,9 +13,11 @@
 	</header>
 
 	<nav>
+
 		{#user}
-			<span class="welcome">Welcome <b>{dataValues.username}</b>.</span>
+			<span class="welcome">Welcome <b>{username}</b>.</span>
 		{/user}
+		<a href="/">HOME</a>
 		<a href="/signup">Sign up</a>
 		{#user}
 			<a href="/logout">Log out</a>
