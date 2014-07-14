@@ -147,7 +147,6 @@ app.get('/login', function(req, res){
 		title: 'Login',
 		message: req.flash('error')
 	});
-
 });
 app.post('/login',
 	passport.authenticate('local', {
@@ -155,4 +154,8 @@ app.post('/login',
 		failureRedirect: '/login',
 		failureFlash: true
 	}));
+app.get('/logout', function(req, res){
+  req.logout();
+  res.redirect('/');
+});
 app.listen(1337); // http://localhost:1337/
